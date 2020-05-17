@@ -80,10 +80,7 @@ class Slider extends Component {
       });
     }
 
-    console.log(JSON.parse(localStorage.getItem("recentArray")));
 
-    console.log(localStorage);
-    console.log(this.state);
     this.handleRequest(this.state.amount, this.state.months);
   };
 
@@ -104,7 +101,6 @@ class Slider extends Component {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         this.setState({
           data: data,
         });
@@ -115,7 +111,7 @@ class Slider extends Component {
         }, 700);
       })
       .catch((err) => {
-        console.log("err", err);
+        console.log("Error :", err);
         this.setState({
           loading: false,
         });
