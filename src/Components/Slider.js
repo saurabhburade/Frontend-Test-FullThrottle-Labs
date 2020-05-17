@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import "./slider.css";
 import loader from "./images/loader.svg";
 import RecentItem from "./RecentItem";
@@ -52,7 +52,6 @@ class Slider extends Component {
       } else {
         localStorage.setItem(
           "recentArray",
-          // ...(JSON.parse(localStorage.getItem("recentArray"))),
           JSON.stringify([
             ...JSON.parse(localStorage.getItem("recentArray")),
 
@@ -69,7 +68,6 @@ class Slider extends Component {
     } else {
       localStorage.setItem(
         "recentArray",
-        // ...(JSON.parse(localStorage.getItem("recentArray"))),
         JSON.stringify([
           {
             amount: this.state.amount,
@@ -86,8 +84,7 @@ class Slider extends Component {
 
     console.log(localStorage);
     console.log(this.state);
-    this.handleRequest(this.state.amount,
-            this.state.months);
+    this.handleRequest(this.state.amount, this.state.months);
   };
 
   recentHandler = (event) => {
@@ -136,10 +133,14 @@ class Slider extends Component {
         <div className="recent-items-slider">
           <p className="recent-slider-title">Recent Results</p>
           <div className="recent-items-container">
-            {this.state.recent.reverse().map((element) => {
+            {this.state.recent.reverse().map((element, index) => {
               return (
                 <div onClick={this.recentHandler}>
-                  <RecentItem amount={element.amount} months={element.months} />
+                  <RecentItem
+                    keyValue={index}
+                    amount={element.amount}
+                    months={element.months}
+                  />
                 </div>
               );
             })}
@@ -158,6 +159,7 @@ class Slider extends Component {
               min={500}
               max={5000}
               onMouseUp={this.handleItems}
+              onTouchEnd={this.handleItems}
             />
           </div>
           <div className="input-range-slider-wrap">
@@ -173,6 +175,7 @@ class Slider extends Component {
               min={6}
               max={24}
               onMouseUp={this.handleItems}
+              onTouchEnd={this.handleItems}
             />
           </div>
           {this.state.data.interestRate ? (

@@ -18,3 +18,20 @@
 .recent-item:active{
     background-color: rgb(217, 218, 219);
 }
+@media(max-width:800px){
+
+.recent-item{
+    /* width: 20em;
+    display: flex;
+    justify-content: space-between;
+    background-color: aliceblue;
+    padding: 2% 5%;
+    margin: 1%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 200ms; */
+
+    
+    width: 15em;
+}
+}
