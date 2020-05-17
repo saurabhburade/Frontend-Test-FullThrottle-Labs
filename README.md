@@ -10,7 +10,7 @@
   
  ### `Deployment` : 
 This task is deployed at 
-  #### `https://flt-frontend-test.netlify.app `
+  #### https://flt-frontend-test.netlify.app 
  
 
 
