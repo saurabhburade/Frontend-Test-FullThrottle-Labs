@@ -12,5 +12,4 @@
 This task is deployed at 
   ### https://flt-frontend-test.netlify.app 
  
-
-
+<img src="./src/Components/images/readme_desktop.png" >
